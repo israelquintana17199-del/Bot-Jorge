@@ -10,20 +10,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import (
-from flask import Flask
-import threading
-import os
-
-app = Flask(__name__)
-@app.route('/')
-def home():
-    return "Bot Jorge activo"
-
-def run_flask():
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
-
-threading.Thread(target=run_flask, daemon=True).start()
-
     Application, CommandHandler, CallbackQueryHandler, 
     ConversationHandler, MessageHandler, ContextTypes, filters
 )
